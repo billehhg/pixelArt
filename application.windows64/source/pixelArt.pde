@@ -1,19 +1,3 @@
-import processing.core.*; 
-import processing.data.*; 
-import processing.event.*; 
-import processing.opengl.*; 
-
-import java.util.HashMap; 
-import java.util.ArrayList; 
-import java.io.File; 
-import java.io.BufferedReader; 
-import java.io.PrintWriter; 
-import java.io.InputStream; 
-import java.io.OutputStream; 
-import java.io.IOException; 
-
-public class colorpicker extends PApplet {
-
 float[] h=new float[(50*50)+1];
 float[] s=new float[(50*50)+1];
 float[] v=new float[(50*50)+1];
@@ -24,8 +8,8 @@ int y=0;
 int ch=100;
 int cs=70;
 int cv=100;
-public void setup(){
-  
+void setup(){
+  size(500,500);
   colorMode(HSB,360,50,50);
   for(int i=0; i<=(50*50);i++){
     h[i]=325;
@@ -33,7 +17,7 @@ public void setup(){
     v[i]=70;
   }
 }
-public void keyPressed(){
+void keyPressed(){
   if(key=='l'||keyCode==RIGHT){  x+=1; if(x>=50){x-=50;}  }
   if(key=='h'||keyCode==LEFT){  x-=1; if(x<0){x+=50;} }
   if(key=='j'||keyCode==DOWN){  y+=1; if(y>=50){y-=50;}  }
@@ -42,7 +26,7 @@ public void keyPressed(){
   if(key=='9'){  y=0;  }
   if(key=='8'){  x=0;  }
   if(key=='q'){  ch+=15; if(ch>360){ch-=360;} }
-  if(key=='a'){  ch-=15; if(ch<360){ch+=360;} }
+  if(key=='a'){  ch-=15; if(ch<0){ch+=360;} }
   if(key=='w'&&cs<100){  cs+=5; }
   if(key=='s'&&cs>0){  cs-=5; }
   if(key=='e'&&cv<100){  cv+=5; }
@@ -52,15 +36,15 @@ public void keyPressed(){
   if(key=='P'){if(paint){paint=false; toggled=true; }else{paint=true; toggled=false; } }
   if(keyCode==BACKSPACE){ setup(); }
 }
-public void mouseDragged(){
+void mouseDragged(){
   x=mouseX/10;
   y=mouseY/10;
   paint=true;
 }
-public void mouseReleased(){
+void mouseReleased(){
   paint=false;
 }
-public void draw(){ 
+void draw(){ 
   int iii=0;
   for(int a=0;a<=49;a++){
     for(int b=0;b<=49;b++){
@@ -73,16 +57,6 @@ public void draw(){
       }
       rect(a*10,b*10,10,10);
       iii++;
-    }
-  }
-}
-  public void settings() {  size(500,500); }
-  static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "colorpicker" };
-    if (passedArgs != null) {
-      PApplet.main(concat(appletArgs, passedArgs));
-    } else {
-      PApplet.main(appletArgs);
     }
   }
 }

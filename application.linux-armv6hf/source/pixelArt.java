@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.OutputStream; 
 import java.io.IOException; 
 
-public class colorpicker extends PApplet {
+public class pixelArt extends PApplet {
 
 float[] h=new float[(50*50)+1];
 float[] s=new float[(50*50)+1];
@@ -42,7 +42,7 @@ public void keyPressed(){
   if(key=='9'){  y=0;  }
   if(key=='8'){  x=0;  }
   if(key=='q'){  ch+=15; if(ch>360){ch-=360;} }
-  if(key=='a'){  ch-=15; if(ch<360){ch+=360;} }
+  if(key=='a'){  ch-=15; if(ch<0){ch+=360;} }
   if(key=='w'&&cs<100){  cs+=5; }
   if(key=='s'&&cs>0){  cs-=5; }
   if(key=='e'&&cv<100){  cv+=5; }
@@ -78,7 +78,7 @@ public void draw(){
 }
   public void settings() {  size(500,500); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "colorpicker" };
+    String[] appletArgs = new String[] { "pixelArt" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

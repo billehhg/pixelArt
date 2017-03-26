@@ -26,7 +26,7 @@ void keyPressed(){
   if(key=='9'){  y=0;  }
   if(key=='8'){  x=0;  }
   if(key=='q'){  ch+=15; if(ch>360){ch-=360;} }
-  if(key=='a'){  ch-=15; if(ch<360){ch+=360;} }
+  if(key=='a'){  ch-=15; if(ch<0){ch+=360;} }
   if(key=='w'&&cs<100){  cs+=5; }
   if(key=='s'&&cs>0){  cs-=5; }
   if(key=='e'&&cv<100){  cv+=5; }
