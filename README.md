@@ -30,8 +30,13 @@ p = current cursor is drawn to canvas
 P = cursor is drawn to canvas until untoggled
 
 backspace = reset canvas
+
 enter/return = save to screenshot in current folder as .png
+
 mouseDrag=cursor is moved and drawn to canvas under mouse
+
+
+
 
 background is set to ugly pink so it can easily be pulled out of gimp2 to transparency
 
