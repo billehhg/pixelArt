@@ -40,4 +40,4 @@ mouseDrag=cursor is moved and drawn to canvas under mouse
 
 background is set to ugly pink so it can easily be pulled out of gimp2 to transparency
 
-if all goes well Java is imbedded and just download the .exe or .linux and it'll work
+i'm too lazy to zip and post things separetely. Just download the whole repository as zip and take the folder you need and delete everything else.
